@@ -48,12 +48,6 @@ df_enterprise["贷款额度"] = total_loan_amount * df_enterprise["交易差额"
 # 设置显示的宽度为 None，表示自动调整宽度以适应显示内容
 # pd.set_option('display.width', None)  
 
-# 输出结果
-# 打印出包含企业代号、信贷风险等级和贷款额度的 DataFrame
-# print(df_enterprise[["企业代号", "信贷风险等级", "贷款额度"]])
-# 将输出结果保存到新的 Excel 文件中
-# df_enterprise[["企业代号", "信贷风险等级", "贷款额度"]].to_excel("output_src/step1-1_result.xlsx", index=False)
-
 
 ########制定简单的信贷策略########
 
