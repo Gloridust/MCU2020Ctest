@@ -1,5 +1,7 @@
 import pandas as pd
 
+########信贷风险等级的量化分析########
+
 # 读取企业信息、进项发票信息和销项发票信息
 df_enterprise = pd.read_excel("question_content/附件1：123家有信贷记录企业的相关数据.xlsx", sheet_name="企业信息")
 df_input_invoice = pd.read_excel("question_content/附件1：123家有信贷记录企业的相关数据.xlsx", sheet_name="进项发票信息")
@@ -28,7 +30,18 @@ df_enterprise["贷款额度"] = total_loan_amount * df_enterprise["交易差额"
 # pd.set_option('display.width', None)  # 设置显示的宽度为 None，表示自动调整宽度以适应显示内容
 
 # 输出结果
-print(df_enterprise[["企业代号", "信贷风险等级", "贷款额度"]])
-
+# print(df_enterprise[["企业代号", "信贷风险等级", "贷款额度"]])
 # 将输出结果保存到新的 Excel 文件中
-df_enterprise[["企业代号", "信贷风险等级", "贷款额度"]].to_excel("output_src/step1-1_result.xlsx", index=False)
+# df_enterprise[["企业代号", "信贷风险等级", "贷款额度"]].to_excel("output_src/step1-1_result.xlsx", index=False)
+
+
+########制定简单的信贷策略########
+
+# 制定信贷策略
+df_enterprise["贷款利率"] = df_enterprise.apply(lambda row: 0.04 if row["信贷风险等级"] == "低" else 0.06, axis=1)
+df_enterprise["贷款期限"] = df_enterprise.apply(lambda row: 1 if row["信贷风险等级"] == "低" else 0.5, axis=1)
+
+# 输出结果
+print(df_enterprise[["企业代号", "信贷风险等级", "贷款额度", "贷款利率", "贷款期限"]])
+# 将输出结果保存到新的 Excel 文件中
+df_enterprise[["企业代号", "信贷风险等级", "贷款额度", "贷款利率", "贷款期限"]].to_excel("output_src/step1-1_result.xlsx", index=False)
