@@ -1,9 +1,9 @@
 import pandas as pd
 
 # 读取企业信息、进项发票信息和销项发票信息
-df_enterprise = pd.read_excel("附件1：123家有信贷记录企业的相关数据.xlsx", sheet_name="企业信息")
-df_input_invoice = pd.read_excel("附件1：123家有信贷记录企业的相关数据.xlsx", sheet_name="进项发票信息")
-df_output_invoice = pd.read_excel("附件1：123家有信贷记录企业的相关数据.xlsx", sheet_name="销项发票信息")
+df_enterprise = pd.read_excel("question_content/附件1：123家有信贷记录企业的相关数据.xlsx", sheet_name="企业信息")
+df_input_invoice = pd.read_excel("question_content/附件1：123家有信贷记录企业的相关数据.xlsx", sheet_name="进项发票信息")
+df_output_invoice = pd.read_excel("question_content/附件1：123家有信贷记录企业的相关数据.xlsx", sheet_name="销项发票信息")
 
 # 合并进项发票和销项发票信息，计算每家企业的交易额
 df_input_sum = df_input_invoice.groupby("企业代号")["金额"].sum()
