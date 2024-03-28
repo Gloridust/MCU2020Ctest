@@ -41,4 +41,4 @@ df_enterprise2["贷款期限"] = df_enterprise2.apply(lambda row: 1 if row["信�
 print(df_enterprise2[["企业代号", "信贷风险等级", "贷款额度", "贷款利率", "贷款期限"]])
 
 # 将结果保存到 Excel 文件中
-df_enterprise2[["企业代号", "信贷风险等级", "贷款额度", "贷款利率", "贷款期限"]].to_excel("output_src/step2_result.xlsx", index=False)
+df_enterprise2[["企业代号", "信贷风险等级", "贷款额度", "贷款利率", "贷款期限"]].to_excel("output_src/step2-1_result.xlsx", index=False)
