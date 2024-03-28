@@ -42,6 +42,6 @@ df_enterprise["贷款利率"] = df_enterprise.apply(lambda row: 0.04 if row["信
 df_enterprise["贷款期限"] = df_enterprise.apply(lambda row: 1 if row["信贷风险等级"] == "低" else 0.5, axis=1)
 
 # 输出结果
-print(df_enterprise[["企业代号", "信贷风险等级", "贷款额度", "贷款利率", "贷款期限"]])
+print(df_enterprise[["企业代号", "信贷风险等级", "贷款额度", "贷款年利率", "贷款期限（年）"]])
 # 将输出结果保存到新的 Excel 文件中
-df_enterprise[["企业代号", "信贷风险等级", "贷款额度", "贷款利率", "贷款期限"]].to_excel("output_src/step1-1_result.xlsx", index=False)
+df_enterprise[["企业代号", "信贷风险等级", "贷款额度", "贷款年利率", "贷款期限（年）"]].to_excel("output_src/step1-1_result.xlsx", index=False)
