@@ -3,9 +3,9 @@ import pandas as pd
 ######## 读取附件2中的数据 ########
 
 # 读取企业信息、进项发票信息和销项发票信息
-df_enterprise2 = pd.read_excel("附件2：302家无信贷记录企业的相关数据.xlsx", sheet_name="企业信息")
-df_input_invoice2 = pd.read_excel("附件2：302家无信贷记录企业的相关数据.xlsx", sheet_name="进项发票信息")
-df_output_invoice2 = pd.read_excel("附件2：302家无信贷记录企业的相关数据.xlsx", sheet_name="销项发票信息")
+df_enterprise2 = pd.read_excel("question_content/附件2：302家无信贷记录企业的相关数据.xlsx", sheet_name="企业信息")
+df_input_invoice2 = pd.read_excel("question_content/附件2：302家无信贷记录企业的相关数据.xlsx", sheet_name="进项发票信息")
+df_output_invoice2 = pd.read_excel("question_content/附件2：302家无信贷记录企业的相关数据.xlsx", sheet_name="销项发票信息")
 
 
 ######## 数据处理和量化分析 ########
