@@ -23,12 +23,12 @@ total_loan_amount = 1000000  # 信贷总额固定为100万元
 df_enterprise["贷款额度"] = total_loan_amount * df_enterprise["交易差额"] / df_enterprise["交易差额"].sum()
 
 # 设置 pandas 的显示选项
-pd.set_option('display.max_rows', None)  # 设置显示的最大行数为 None，表示所有行都会显示
-pd.set_option('display.max_columns', None)  # 设置显示的最大列数为 None，表示所有列都会显示
-pd.set_option('display.width', None)  # 设置显示的宽度为 None，表示自动调整宽度以适应显示内容
+# pd.set_option('display.max_rows', None)  # 设置显示的最大行数为 None，表示所有行都会显示
+# pd.set_option('display.max_columns', None)  # 设置显示的最大列数为 None，表示所有列都会显示
+# pd.set_option('display.width', None)  # 设置显示的宽度为 None，表示自动调整宽度以适应显示内容
 
 # 输出结果
 print(df_enterprise[["企业代号", "信贷风险等级", "贷款额度"]])
 
 # 将输出结果保存到新的 Excel 文件中
-df_enterprise[["企业代号", "信贷风险等级", "贷款额度"]].to_excel("step1-1_result.xlsx", index=False)
+df_enterprise[["企业代号", "信贷风险等级", "贷款额度"]].to_excel("output_src/step1-1_result.xlsx", index=False)
