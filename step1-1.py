@@ -29,7 +29,7 @@ df_transaction["交易差额"] = df_transaction["销项总额"] - df_transaction
 # pd.merge() 用于将两个 DataFrame 按照指定的键连接起来
 df_enterprise = pd.merge(df_enterprise, df_transaction, left_on="企业代号", right_index=True)
 
-# 根据企业的交易差额等信息，进行信贷风险量化分析（这里仅做示例，实际分析需根据具体情况确定）
+# 根据企业的交易差额等信息，进行信贷风险量化分析
 # pd.cut() 用于将数值分成离散的区间
 df_enterprise["信贷风险等级"] = pd.cut(df_enterprise["交易差额"], bins=3, labels=["高", "中", "低"])
 
