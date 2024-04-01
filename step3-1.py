@@ -1,7 +1,7 @@
 import pandas as pd
 
 # 读取银行贷款年利率与客户流失率关系的统计数据
-df_loss_rate = pd.read_excel("附件3：银行贷款年利率与客户流失率关系的统计数据.xlsx")
+df_loss_rate = pd.read_excel("question_content/附件3：银行贷款年利率与客户流失率关系的统计数据.xlsx")
 
 # 定义根据信贷风险等级和突发因素制定信贷调整策略的函数
 def adjust_credit_strategy(credit_risk, impact_factor):
