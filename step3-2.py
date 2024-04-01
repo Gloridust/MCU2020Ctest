@@ -4,7 +4,7 @@ import pandas as pd
 df_enterprise = pd.read_excel("output_src/step2-1_result.xlsx")
 
 # 读取银行贷款年利率与客户流失率关系的统计数据
-df_loan_loss_rate = pd.read_excel("附件3：银行贷款年利率与客户流失率关系的统计数据.xlsx")
+df_loan_loss_rate = pd.read_excel("question_content/附件3：银行贷款年利率与客户流失率关系的统计数据.xlsx")
 
 # 定义信贷总额为1亿元
 total_loan_amount = 100000000
@@ -22,4 +22,4 @@ df_enterprise["贷款额度"] *= (1 - df_enterprise["客户流失率"])
 # 输出结果
 print(df_enterprise[["企业代号", "信贷风险等级", "贷款额度", "贷款利率", "客户流失率"]])
 # 将输出结果保存到新的 Excel 文件中
-df_enterprise[["企业代号", "信贷风险等级", "贷款额度", "贷款利率", "客户流失率"]].to_excel("output_src/step3_result.xlsx", index=False)
+df_enterprise[["企业代号", "信贷风险等级", "贷款额度", "贷款利率", "客户流失率"]].to_excel("output_src/step3-2_result.xlsx", index=False)
